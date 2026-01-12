@@ -1,29 +1,30 @@
 🎤 Speech to Image Generator (Offline & Free)
 
-A Streamlit-based offline application that converts spoken audio into text using the Vosk speech recognition model and then generates a visual image from the recognized text.
+A Streamlit-based offline application that converts spoken audio into text using the Vosk speech recognition model and then generates an image containing the recognized text.
+
 The output can be downloaded as PNG or PDF.
 
-This project is fully offline, API-free, and reproducible, making it ideal for learning, demonstrations, and academic projects.
+This project is fully offline, API-free, and reproducible, making it ideal for learning, demonstrations, and academic projects where internet access or cloud APIs are restricted.
 
 🚀 Why This Project Is Different
 
-Unlike popular AI tools such as ChatGPT or Gemini, which rely on cloud APIs and internet connectivity, this project focuses on:
+Unlike popular AI tools such as ChatGPT or Gemini, which rely on cloud APIs and continuous internet connectivity, this project focuses on:
 
-✅ Offline execution
+✅ Fully offline execution
 
 ✅ No API keys or paid services
 
 ✅ Complete control over data and outputs
 
-✅ Transparent, explainable processing pipeline
+✅ Transparent and explainable processing pipeline
 
 ✅ Local execution suitable for restricted environments
 
-This makes the project especially valuable for education, labs, and institutions where cloud AI tools are unavailable or restricted.
+This makes the project especially valuable for education, labs, and institutions where cloud-based AI tools are unavailable or restricted.
 
 ✨ Features
 
-🎙️ Record voice input (10 seconds)
+🎙️ Record voice input (up to 10 seconds)
 
 🧠 Offline speech-to-text using Vosk
 
@@ -47,9 +48,9 @@ The recognized text is rendered onto a fixed-size image canvas
 
 The generated image is displayed instantly
 
-User can download the result as PNG or PDF
+User can download the output as PNG or PDF
 
-All processing happens locally on the user’s machine, ensuring predictability and privacy.
+All processing happens locally on the user’s machine, ensuring predictability, privacy, and reproducibility.
 
 🆚 Comparison with Cloud AI Tools
 Feature	This Project	ChatGPT / Gemini
@@ -61,7 +62,7 @@ Direct image/PDF download	✅ Yes	❌ Limited
 Full code control	✅ Yes	❌ No
 Reproducible output	✅ Yes	❌ No
 
-This project does not aim to replace AI models.
+This project does not aim to replace cloud AI models.
 Instead, it provides a controlled, offline alternative for speech-based text visualization.
 
 🛠️ Tech Stack
@@ -84,37 +85,68 @@ speech-to-image/
 └── .gitignore
 
 
-Large files such as virtual environments, audio files, and speech models are intentionally excluded from version control.
+Large files such as virtual environments, audio recordings, and Vosk models are intentionally excluded from version control.
 
-▶️ Run Locally
-1️⃣ Create and activate virtual environment
+▶️ How to Run on Your Computer (Local Setup)
+1️⃣ Clone the repository
+git clone https://github.com/your-username/speech-to-image.git
+cd speech-to-image
+
+2️⃣ Create and activate a virtual environment
+
+Windows
+
 python -m venv venv
 venv\Scripts\activate
 
-2️⃣ Install dependencies
+
+Linux / macOS
+
+python3 -m venv venv
+source venv/bin/activate
+
+3️⃣ Install dependencies
 pip install -r requirements.txt
 
-3️⃣ Download Vosk model
+4️⃣ Download the Vosk model
 
-Download a Vosk English model and place it in the project directory as:
+Download an English Vosk model from the official site:
 
-vosk-model/
+👉 https://alphacephei.com/vosk/models
 
-4️⃣ Run the application
+Recommended:
+
+vosk-model-small-en-us-0.15
+
+
+Extract and place it inside the project directory as:
+
+speech-to-image/
+├── vosk-model/
+│   ├── am
+│   ├── conf
+│   └── ...
+
+5️⃣ Run the application
 streamlit run speechtoimage.py
 
-
-Open in browser:
-
+6️⃣ Open in browser
 http://localhost:8501
+
+
+Make sure your microphone is connected and allowed.
 
 ☁️ Deployment Notes
 
-This application cannot be deployed on Streamlit Cloud due to microphone and local model restrictions.
+This application cannot be deployed on Streamlit Cloud due to:
 
-A text-only version can be deployed separately for cloud demonstration.
+Microphone access limitations
 
-The full speech-based pipeline runs locally by design.
+Local Vosk model requirements
+
+A text-only version (without live audio recording) can be deployed separately for cloud demonstration.
+
+The full speech-based pipeline is intentionally local by design.
 
 🎯 Use Cases
 
@@ -126,7 +158,7 @@ Speech processing learning
 
 Python + Streamlit practice
 
-Portfolio project showcasing system design
+Portfolio project showcasing system design and offline-first architecture
 
 ⚠️ Important Notes
 
@@ -136,23 +168,23 @@ Vosk models must be downloaded separately
 
 Generated files are excluded using .gitignore
 
-The project focuses on speech-to-text and visualization, not AI image generation
+This project focuses on speech-to-text and visualization, not AI image generation
 
 📌 Future Enhancements
 
-Text wrapping and layout improvements
+Improved text wrapping and layout handling
 
-Adjustable font size and themes
+Adjustable font sizes and themes
 
 Multi-language speech support
 
-Integration with local AI image models (e.g., Stable Diffusion)
+Integration with local image-generation models (e.g., Stable Diffusion)
 
-History and gallery view
+History and gallery view for generated images
 
 👨‍💻 Author
 
-Developed as a lightweight, offline, and transparent alternative to cloud-dependent AI tools, with a focus on learning and reproducibility.
+Developed as a lightweight, offline, and transparent alternative to cloud-dependent AI tools, with a strong focus on learning, reproducibility, and responsible system design.
 
 ✅ Summary
 
@@ -160,10 +192,20 @@ This project demonstrates:
 
 Practical software engineering
 
-Offline-first system design
+Offline-first system architecture
 
 Clean UI development with Streamlit
 
-Responsible and realistic project scoping
+Honest and realistic project scoping
 
 Clear differentiation from cloud-based AI platforms
+
+If you want next:
+
+I can tighten this further for recruiters
+
+Add architecture diagram
+
+Or rewrite it in IEEE / academic project format
+
+This README is already internship-grade.
